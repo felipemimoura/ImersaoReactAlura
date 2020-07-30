@@ -18,9 +18,12 @@ function CadastroCategoria() {
       [chave]: valor,
     });
   }
-  function handleChange(infosDosEnventos) {
-    const { getAttribute, value } = infosDosEnventos.target;
-    setValue(getAttribute('name'), value);
+  function handleChange(infosDoEvento) {
+    /*  const { getAttribute, value } = infosDoEvento.target; */
+    setValue(
+      infosDoEvento.target.getAttribute('name'),
+      infosDoEvento.target.value
+    );
   }
 
   //prettier-ignore
@@ -35,28 +38,20 @@ function CadastroCategoria() {
         ])
         setValues(valoresIniciais)
       }}>
-          <FormField 
-            label="Nome da Categoria"
-            type="text"
-            name="nome"
-            value={values.nome}
-            onChange={handleChange}
-          />
-          <FormField 
-            label="Descrição"
-            type="text"
-            name="Descrição"
-            value={values.descricao}
-            onChange={handleChange}
-          />
-{/*         <div>
-          <label>Descrição
-            <textarea type="text"
-              name="descricao" value={values.descricao}
-              onChange={handleChange}
-            />
-          </label>
-        </div> */}
+        <FormField
+        label="Nome da Categoria" 
+        type="text"
+        name="nome"
+        value={values.nome}
+        onChange={handleChange}
+        />
+        <FormField
+        label="Descrição" 
+        type="text-area"
+        name="descricao"
+        value={values.descricao}
+        onChange={handleChange}
+        />
 
         <FormField 
           label="Cor"
@@ -64,16 +59,8 @@ function CadastroCategoria() {
           name="cor"
           value={values.cor}
           onChange={handleChange}
-        
         />
-{/*         <div>
-          <label>Cor
-            <input type="color"
-              name="cor" value={values.cor}
-              onChange={handleChange}
-                />
-          </label>
-        </div> */}
+
         <button>
           Cadastrar
         </button>
