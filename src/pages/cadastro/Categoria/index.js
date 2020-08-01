@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable linebreak-style */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
@@ -23,6 +25,7 @@ function CadastroCategoria() {
     /*  const { getAttribute, value } = infosDoEvento.target; */
     setValue(
       infosDoEvento.target.getAttribute('name'),
+      // eslint-disable-next-line comma-dangle
       infosDoEvento.target.value
     );
   }
